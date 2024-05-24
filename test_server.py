@@ -30,8 +30,7 @@ def test_correct_post_api_endpoint(client):
                     content_type='application/json',
                     data=json.dumps({'name': 'Den', 'age': 100}))
     assert r.json == {'status': 'OK'}
-    assert r.status_code == 200
-    
+    assert r.status_code == 200        
     r = client.post('/api',
                     content_type='application/json',
                     data=json.dumps({'name': 'Den'}))
