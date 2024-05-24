@@ -1,5 +1,5 @@
 import pytest
-import app as tested_app
+from main import app as tested_app
 import json
 
 
