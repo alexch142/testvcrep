@@ -5,8 +5,8 @@ import json
 
 @pytest.fixture
 def client():
-    tested_app.app.config['TESTING'] = True
-    with tested_app.app.test_client() as client:
+    tested_app.config['TESTING'] = True
+    with tested_app.test_client() as client:
         yield client
 
 
