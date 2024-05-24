@@ -4,6 +4,7 @@ from flask import request, jsonify
 app = Flask(__name__)
 
 def validate_post_data(data: dict) -> bool:
+    
     if not isinstance(data, dict):
         return False
     if not data.get('name') or not isinstance(data['name'], str):
@@ -13,10 +14,13 @@ def validate_post_data(data: dict) -> bool:
     return True
 
 @app.route('/', methods=['GET'])
+
 def hello():
+    
     return 'Hello World!'
 
 @app.route('/api', methods=['GET', 'POST'])
+
 def api():
     """
     /api entpoint
@@ -36,7 +40,9 @@ def api():
             return jsonify({'status': 'bad input'}), 400
 
 def main():
+    
     app.run(host='0.0.0.0', port=8080)
 
 if __name__ == '__main__':
+    
     main()
